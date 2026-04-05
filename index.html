@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Anurag MN — Product Manager / Senior Product Manager / AI PM portfolio." />
+  <title>Anurag MN | Product Manager Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg2: #111a33;
+      --card: rgba(17, 26, 51, 0.72);
+      --card-border: rgba(255,255,255,0.10);
+      --text: #e9eefc;
+      --muted: #a9b4d0;
+      --accent: #78a6ff;
+      --accent2: #79f2c0;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 24px;
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(120,166,255,0.18), transparent 35%),
+        radial-gradient(circle at top right, rgba(121,242,192,0.14), transparent 30%),
+        linear-gradient(180deg, var(--bg), #070a13 80%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(100% - 32px, var(--max)); margin: 0 auto; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 10, 19, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+    .brand {
+      display: flex; flex-direction: column;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .brand small { color: var(--muted); font-weight: 500; }
+    .nav-links {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      font-size: 0.95rem; color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 72px 0 32px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      color: var(--accent2);
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.96;
+      margin: 0 0 16px;
+      letter-spacing: -0.05em;
+    }
+    .subtitle {
+      max-width: 760px;
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+    .cta-row {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 18px; border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      font-weight: 600;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #5d7cff);
+      border-color: transparent;
+      color: white;
+    }
+    .btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.22); }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.09), rgba(255,255,255,0.04));
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card h3 { margin: 0 0 10px; font-size: 1.05rem; color: var(--accent2); }
+    .hero-card p { margin: 0; color: var(--muted); }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .mini-stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 16px;
+    }
+    .mini-stat strong {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .mini-stat span { color: var(--muted); font-size: 0.92rem; }
+
+    section { padding: 22px 0; }
+    .section-head {
+      display: flex; justify-content: space-between; gap: 18px; align-items: end;
+      margin-bottom: 16px;
+    }
+    .section-head h2 {
+      margin: 0; font-size: 1.8rem; letter-spacing: -0.03em;
+    }
+    .section-head p { margin: 0; color: var(--muted); max-width: 720px; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+    .card p, .card li { color: var(--muted); }
+    .pill-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    @media (min-width: 700px) {
+      .pill-row { grid-template-columns: repeat(4, minmax(0,1fr)); }
+    }
+    .pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(120,166,255,0.15), rgba(121,242,192,0.12));
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #e6ecff;
+      font-size: 0.9rem;
+      text-align: center;
+      min-height: 38px;
+      transition: all 0.2s ease;
+    }
+    .pill:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    .project {
+      display: grid;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    .project::before {
+      content: "";
+      position: absolute; inset: -80px auto auto -80px;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(120,166,255,0.22), transparent 65%);
+      pointer-events: none;
+    }
+    .project-top { display: flex; justify-content: space-between; gap: 12px; align-items: start; }
+    .project kbd {
+      font-family: inherit;
+      background: rgba(121,242,192,0.12);
+      border: 1px solid rgba(121,242,192,0.25);
+      color: #d9fff0;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+    ul.clean {
+      margin: 0; padding-left: 18px;
+    }
+    ul.clean li { margin: 8px 0; }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(255,255,255,0.09);
+    }
+    .timeline-item:first-child { border-top: none; padding-top: 0; }
+    .time {
+      color: var(--accent2);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .role {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+    }
+    .org { color: var(--muted); margin: 0 0 10px; }
+
+    .footer {
+      padding: 36px 0 60px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero, .grid-2, .timeline-item { grid-template-columns: 1fr; }
+      .nav-inner { flex-direction: column; align-items: start; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding-top: 48px; }
+      h1 { font-size: 2.8rem; }
+      .section-head { flex-direction: column; align-items: start; }
+      .mini-grid { grid-template-columns: 1fr; }
+      .card, .hero-card { padding: 18px; }
+      .project-top { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <span>Anurag MN</span>
+        <small>Product Manager • Senior Product Manager • AI PM</small>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="badge">AI-native product builder • data-driven • cross-functional</div>
+        <h1>Building products where AI, business, and user experience meet.</h1>
+        <p class="subtitle">
+          I am a Product Manager at MakeMyTrip with experience across pricing, funnel optimization,
+          and generative AI. I work on high-impact products that improve revenue, customer experience,
+          and operating efficiency at scale. I am especially interested in AI PM roles, platform thinking,
+          and agentic workflows that turn strategy into measurable outcomes.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="mailto:mail2anuragmn@gmail.com">Email Me</a>
+          <a class="btn" href="https://github.com/ANURAGMN" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/anurag-mn/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>What I bring</h3>
+        <p>
+          A blend of product strategy, data analysis, AI/ML collaboration, and execution depth —
+          shaped by experience across pricing systems, mobile products, and user-facing improvements.
+        </p>
+        <div class="mini-grid">
+          <div class="mini-stat">
+            <strong>20M+</strong>
+            <span>Users impacted through mobile product and pricing initiatives</span>
+          </div>
+          <div class="mini-stat">
+            <strong>25%</strong>
+            <span>Reduction in manual pricing intervention via agentic workflows</span>
+          </div>
+          <div class="mini-stat">
+            <strong>7%</strong>
+            <span>Conversion uplift from pricing intelligence and funnel optimizations</span>
+          </div>
+          <div class="mini-stat">
+            <strong>60%</strong>
+            <span>Infrastructure cost reduction through smarter pricing logic</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="section-head">
+        <h2>About</h2>
+        <p>
+          
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          I build products by combining customer empathy, systems thinking, and strong execution.
+          At MakeMyTrip, I have worked on data-driven initiatives spanning competitive pricing,
+          funnel performance, rule governance, and generative AI. My background includes a PGDM from
+          SPJIMR and an engineering foundation from Huawei, which helps me work comfortably across
+          business, design, data science, engineering, and operations.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <h2>Featured Work</h2>
+        <p></p>
+      </div>
+      <div class="grid-2">
+        <article class="card project">
+          <div class="project-top">
+            <h3>Flywheel Pricing Platform</h3>
+            <kbd>Platform PM • Data • AI Systems</kbd>
+          </div>
+
+          <p>
+            Built and scaled a pricing intelligence platform driving decisions across 60,000+ hotels.
+          </p>
+
+          <h4 style="margin-top:12px;">Core Impact</h4>
+          <ul class="clean">
+            <li>Improved pricing signal quality by 33%</li>
+            <li>Enabled 300K+ SKU-level analytics</li>
+            <li>Transitioned systems toward predictive intelligence</li>
+          </ul>
+
+          <h4 style="margin-top:12px;">AI / Deep Learning Initiative</h4>
+          <ul class="clean">
+            <li>Led image-to-property matching across 30K+ listings (baseline ~34% accuracy)</li>
+            <li>Built multi-model system (ResNet, VGG, Inception, EfficientNet)</li>
+            <li>Used embeddings + cosine similarity with Top-K matching</li>
+            <li>Introduced ensemble validation for robustness</li>
+            <li>Achieved 90%+ accuracy → enabled large-scale automation</li>
+          </ul>
+
+          <div class="cta-row" style="margin-top:12px;">
+            <a class="btn" href="https://www.youtube.com/watch?v=Hjq538foP68" target="_blank">View Demo</a>
+          </div>
+        </article>
+
+        <article class="card project">
+          <div class="project-top">
+            <h3>Agentic AI Tutor</h3>
+            <kbd>Side Project • AI Tutor</kbd>
+          </div>
+
+          <p>
+            Explored whether LLMs can replicate real teaching behavior by designing and evaluating AI tutor systems using NCERT-aligned content.
+          </p>
+
+          <h4 style="margin-top:12px;">Core Approach</h4>
+          <ul class="clean">
+            <li>Compared Generic LLMs, RAG pipelines, and fine-tuned models</li>
+            <li>Fine-tuned LLaMA-3 and Gemma-7B using QLoRA on Socratic-style dialogues</li>
+            <li>Focused on conceptual clarity, interactivity, and learning flow</li>
+          </ul>
+
+          <h4 style="margin-top:12px;">Key Results</h4>
+          <ul class="clean">
+            <li>Concept depth: 8.88 / 10</li>
+            <li>Interactivity: 8.26 / 10</li>
+            <li>Overall score: 8.11 vs 6.35 (RAG baseline)</li>
+            <li>~50% reduction in response variance</li>
+          </ul>
+
+          <div class="cta-row" style="margin-top:12px;">
+            <a class="btn" href="https://github.com/ANURAGMN/FinetuningLLM_NCERT7/blob/main/Finetuning%20research%20paper.pdf" target="_blank">View Research</a>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">LLM Fine-tuning</span>
+            <span class="pill">QLoRA</span>
+            <span class="pill">Socratic Learning</span>
+            <span class="pill">AI in Education</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="ai-builder">
+      <div class="section-head">
+        <h2>How I Build with AI</h2>
+        <p></p>
+      </div>
+      <div class="card">
+        <p>
+          Over the past few months, my approach to product development has shifted from primarily documenting ideas
+          to actively building and testing them.
+        </p>
+        <p>
+          Using AI tools like Cursor, I’ve moved earlier into the product lifecycle — prototyping concepts,
+          validating assumptions, and exploring edge cases before formalizing requirements.
+        </p>
+        <ul class="clean">
+          <li><strong>62%</strong> — Rapid prototyping and experimentation</li>
+          <li><strong>19%</strong> — Automation scripts and tooling</li>
+          <li><strong>17%</strong> — Exploring approaches and problem spaces</li>
+        </ul>
+        <p>
+          This shift has enabled me to move ideas from concept to working prototype within hours,
+          significantly reducing ambiguity before engineering involvement.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Product Simulations</span>
+          <span class="pill">AI Prototypes</span>
+          <span class="pill">Internal Tools</span>
+          <span class="pill">Rapid Experimentation</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p></p>
+      </div>
+      <div class="card timeline">
+        <div class="timeline-item">
+          <div class="time">Jan 2024 – Present</div>
+          <div>
+            <h3 class="role">Product Manager (Data and AI/ML)</h3>
+            <p class="org">MakeMyTrip, Bengaluru</p>
+            <ul class="clean">
+              <li>Lead product work across AI-native pricing, experimentation, and automation.</li>
+              <li>
+                External validation: 
+                <a href="https://enterpriseai.economictimes.indiatimes.com/news/case-studies/revolutionizing-bus-travel-how-redbus-leverages-ai-for-smarter-operations/124063120" target="_blank"><strong>Economic Times Case Study</strong></a> 
+                • 
+                <a href="https://www.autocarpro.in/news/the-algorithm-that-adjusts-bus-prices-15000-times-a-day-129061" target="_blank"><strong>Autocar Article</strong></a>
+              </li>
+              <li>Work with DS, Engineering, MLOps, Revenue, and Finance to ship scalable systems.</li>
+              <li>Drive simulation-based validation, replay testing, and continuous improvement loops.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time">Apr 2022 – Dec 2023</div>
+          <div>
+            <h3 class="role">Associate Product Manager</h3>
+            <p class="org">MakeMyTrip, Bengaluru</p>
+            <ul class="clean">
+              <li>Scaled dynamic discounting coverage and improved pricing leverage with data-led guardrails.</li>
+              <li>Improved conversion and search visibility through pricing intelligence and funnel optimizations.</li>
+              <li>Standardized property data quality at scale to improve trust and bookability.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="time">Apr 2018 – May 2019</div>
+          <div>
+            <h3 class="role">Associate Software Developer</h3>
+            <p class="org">Huawei, Bengaluru</p>
+            <ul class="clean">
+              <li>Worked on large-scale mobile software customization and engineering productivity improvements.</li>
+              <li>Collaborated across teams to reduce downtime and improve delivery quality.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <h2>Skills</h2>
+        <p></p>
+      </div>
+      <div class="card">
+        <div class="pill-row">
+          <span class="pill">Product Strategy</span>
+          <span class="pill">AI Product Management</span>
+          <span class="pill">Data Analysis</span>
+          <span class="pill">Agile</span>
+          <span class="pill">Design Thinking</span>
+          <span class="pill">Leadership</span>
+          <span class="pill">Wireframing</span>
+          <span class="pill">Statistics</span>
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Data Science</span>
+          <span class="pill">MLOps Collaboration</span>
+          <span class="pill">Experimentation</span>
+          <span class="pill">Guardrail Design</span>
+          <span class="pill">Revenue Products</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="section-head">
+        <h2>Leadership & Achievements</h2>
+        <p></p>
+      </div>
+      <div class="card">
+        <ul class="clean">
+          <li><strong>Leadership Coach</strong>, LandmarkWorldwide — One of the youngest Introduction Leaders in South India</li>
+          <li><strong>Cricket Winner (2026)</strong> — Redbus League</li>
+          <li><strong>Chess Champion</strong> — MakeMyTrip; State-level chess player</li>
+          <li><strong>National Level Project Competition (2016)</strong> — Led a team of 4 to secure 3rd prize</li>
+          <li><strong>10K Marathon Runner</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-head">
+        <h2>Education</h2>
+        <p></p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>PGDM</h3>
+          <p class="org">S.P. Jain Institute of Management & Research, Mumbai</p>
+          <p>Jul 2020 – Mar 2022</p>
+          <p>Global finalist, GSIC; won seed funding for an ed-tech innovation.</p>
+        </div>
+        <div class="card">
+          <h3>B.E. in Computer Science</h3>
+          <p class="org">Bangalore Institute of Technology</p>
+          <p>Sep 2012 – Jul 2016</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p></p>
+      </div>
+      <div class="card">
+        <p><strong>Email:</strong> <a href="mailto:mail2anuragmn@gmail.com">mail2anuragmn@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/anurag-mn/" target="_blank" rel="noreferrer">linkedin.com/in/anurag-mn</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/ANURAGMN" target="_blank" rel="noreferrer">github.com/ANURAGMN</a></p>
+        <p><strong>Location:</strong> Bengaluru, India</p>
+      </div>
+    </section>
+
+    
+  </main>
+</body>
+</html>
